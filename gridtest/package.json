@@ -1,0 +1,134 @@
+{
+  "name": "gridtest",
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!((alasql)|(@mui/x-date-pickers/node/AdapterDateFns)))/"
+    ],
+    "coverageReporters": [
+      "cobertura",
+      "lcov",
+      "html",
+      "text-summary"
+    ],
+    "coveragePathIgnorePatterns": [
+      "./src/ComponentRendering/HeaderRender.tsx"
+    ],
+    "moduleNameMapper": {
+      "react-quill/dist/quill.snow.css": "<rootDir>/src/Component/IvpSummernote/TestUtils/summernoteMockComponent"
+    }
+  },
+  "version": "#{VERSION}#",
+  "private": false,
+  "dependencies": {
+    "@adaptabletools/adaptable-react-aggrid-cjs": "19.2.1",
+    "@ckeditor/ckeditor5-basic-styles": "^40.2.0",
+    "@ckeditor/ckeditor5-build-classic": "^40.2.0",
+    "@ckeditor/ckeditor5-mention": "^40.2.0",
+    "@ckeditor/ckeditor5-react": "^6.2.0",
+    "@ckeditor/ckeditor5-ui": "^40.2.0",
+    "@dnd-kit/core": "^6.1.0",
+    "@dnd-kit/sortable": "^8.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mui/icons-material": "^5.8.2",
+    "@mui/material": "^5.8.2",
+    "@mui/system": "^5.8.2",
+    "@mui/x-date-pickers": "6.18.1",
+    "@reduxjs/toolkit": "^1.8.3",
+    "@testing-library/jest-dom": "5.17.0",
+    "@testing-library/react": "14.2.1",
+    "@testing-library/user-event": "14.5.2",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.38",
+    "@types/react-dom": "^18.0.5",
+    "@types/react-redux-toastr": "^7.6.6",
+    "ag-grid-community": "~32.3.3",
+    "ag-grid-enterprise": "~32.3.3",
+    "ag-grid-react": "~32.3.3",
+    "alasql": "^2.0.5",
+    "axios": "^0.27.2",
+    "css-mediaquery": "^0.1.2",
+    "date-fns": "^2.29.1",
+    "date-fns-tz": "^2.0.1",
+    "file-saver": "^2.0.5",
+    "highcharts": "^10.2.1",
+    "highcharts-react-official": "^3.1.0",
+    "jest-junit": "^14.0.1",
+    "jquery": "^3.7.1",
+    "lodash": "4.17.20",
+    "numeral": "^2.0.6",
+    "quill": "^1.3.7",
+    "quill-mention": "^4.1.0",
+    "react": "^18.1.0",
+    "react-autosuggest": "^10.1.0",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "^18.1.0",
+    "react-dropzone": "^14.2.3",
+    "react-icons": "^4.4.0",
+    "react-number-format": "^4.9.3",
+    "react-quill": "^2.0.0",
+    "react-redux": "^8.0.2",
+    "react-redux-toastr": "^7.6.13",
+    "react-router-dom": "^6.15.0",
+    "react-scripts": "5.0.1",
+    "react-sortable-hoc": "^2.0.0",
+    "react-virtuoso": "^4.12.6",
+    "react-window": "^1.8.8",
+    "ts-jest": "^27.0.0",
+    "typescript": "^4.7.3",
+    "web-vitals": "^2.1.4",
+    "windows-iana": "^5.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "copy-files": "copyfiles -u 1 src/assets/* dist/src",
+    "copy-assets": "copyfiles -u 1 src/Component/*/assets/* dist/src",
+    "copy-assets-all": "copyfiles -u 1 src/Component/*/assets/*/* dist/src",
+    "build": "tsc --project tsconfig.build.json && npm run copy-files && npm run copy-assets && npm run copy-assets-all",
+    "test": "set CI=true && react-scripts test --coverage --reporters=jest-junit",
+    "lint": "eslint --ext js,ts,tsx src --max-warnings=0",
+    "eject": "react-scripts eject",
+    "test:coverage": "react-scripts test --env=jsdom --watchAll=false --coverage --collectCoverageFrom='./src/**'"
+  },
+  "jest-junit": {
+    "reportTestSuiteErrors": "true"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.25",
+    "@types/react-window": "^1.8.5",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "jest-watch-typeahead": "^0.6.5",
+    "rimraf": "^3.0.2"
+  }
+}
